@@ -8,10 +8,9 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def main():
-    try:
-        sys.argv[1]
+    if len(sys.argv) > 1:
         time.sleep(int(sys.argv[1]))
-    except Exception:
+    else:
         time.sleep(180)
     notification = Notify()
     notification.title = "Notification!"
